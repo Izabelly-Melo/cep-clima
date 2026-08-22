@@ -1,0 +1,4 @@
+apiVersion: skaffold/v4beta14
+kind: Config
+metadata:
+  name: cep-clima
