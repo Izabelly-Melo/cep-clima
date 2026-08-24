@@ -46,8 +46,7 @@ func weatherHandler(w http.ResponseWriter, r *http.Request) {
 	address, err := api.ViaCepHandler(cep)
 	if err != nil {
 		if errors.Is(err, api.ErrNotFound) {
-			w.WriteHeader(http.StatusNotFound)
-			json.NewEncoder(w).Encode(map[string]string{"message": "can not find zipcode"})
+			writeError(w, http.StatusNotFound, "can not find zipcode")
 			return
 		}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
