@@ -23,7 +23,7 @@ type ViaCEPOutput struct {
 	Gia         string `json:"gia"`
 	DDD         string `json:"ddd"`
 	Siafi       string `json:"siafi"`
-	Erro        bool   `json:"erro"`
+	Erro        string `json:"erro,omitempty"`
 }
 
 type WeatherAPIOutput struct {

@@ -28,7 +28,7 @@ func ViaCepHandler(cep string) (*entity.CEP, error) {
 		return nil, err
 	}
 
-	if data.Erro {
+	if data.Erro != "" {
 		return nil, ErrNotFound
 	}
 
