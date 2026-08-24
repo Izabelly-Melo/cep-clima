@@ -27,6 +27,10 @@ func WeatherHandler(city string) (*entity.Weather, error) {
 		return nil, ErrNotFound
 	}
 
+	if req.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("weather api: status inesperado %d", req.StatusCode)
+	}
+
 	res, err := io.ReadAll(req.Body)
 	if err != nil {
 		return nil, err

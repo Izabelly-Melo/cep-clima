@@ -17,6 +17,10 @@ func ViaCepHandler(cep string) (*entity.CEP, error) {
 	}
 	defer req.Body.Close()
 
+	if req.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("viacep: status inesperado %d", req.StatusCode)
+	}
+
 	res, err := io.ReadAll(req.Body)
 	if err != nil {
 		return nil, err

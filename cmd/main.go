@@ -49,7 +49,8 @@ func weatherHandler(w http.ResponseWriter, r *http.Request) {
 			writeError(w, http.StatusNotFound, "can not find zipcode")
 			return
 		}
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		log.Println("erro ao consultar ViaCEP:", err)
+		writeError(w, http.StatusInternalServerError, "internal server error")
 		return
 	}
 
@@ -59,7 +60,8 @@ func weatherHandler(w http.ResponseWriter, r *http.Request) {
 			writeError(w, http.StatusNotFound, "can not find zipcode")
 			return
 		}
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		log.Println("erro ao consultar WeatherAPI:", err)
+		writeError(w, http.StatusInternalServerError, "internal server error")
 		return
 	}
 
