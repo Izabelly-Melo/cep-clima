@@ -4,12 +4,12 @@ Sistema em Go que recebe um CEP, identifica a cidade correspondente (ViaCEP) e r
 
 ## URL em produção (Cloud Run)
 
-> https://cep-clima-984356946986.southamerica-east1.run.app
+> https://cep-clima-337022985738.southamerica-east1.run.app
 
 Exemplo de uso:
 
 ```bash
-curl https://cep-clima-984356946986.southamerica-east1.run.app/01310100
+curl https://cep-clima-337022985738.southamerica-east1.run.app/01310100
 ```
 
 ## Tecnologias
